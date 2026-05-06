@@ -295,3 +295,7 @@ a{color:inherit;text-decoration:none}
   .trans-images{grid-template-columns:1fr 1fr}
   .timeline__title{white-space:normal}
 }
+
+/* Botoes pretos -> sage */
+.btn--ink{background:var(--sage-dark);color:var(--paper);border-color:var(--sage-dark)}
+.btn--ink:hover{background:var(--sage);border-color:var(--sage);color:var(--paper)}
