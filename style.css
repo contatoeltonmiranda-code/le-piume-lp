@@ -299,3 +299,7 @@ a{color:inherit;text-decoration:none}
 /* Botoes pretos -> sage */
 .btn--ink{background:var(--sage-dark);color:var(--paper);border-color:var(--sage-dark)}
 .btn--ink:hover{background:var(--sage);border-color:var(--sage);color:var(--paper)}
+
+/* Bullets problema: numero realmente grande */
+.problem__bullet{width:64px;height:64px;font-size:22px;border-width:2px;font-style:normal;font-weight:500}
+.problem__item{gap:24px}
