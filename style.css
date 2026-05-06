@@ -231,3 +231,67 @@ a{color:inherit;text-decoration:none}
 .nav__lang{font-size:11px;letter-spacing:2px;color:var(--mute);padding:8px 14px;border:1px solid var(--line);transition:all .3s;font-weight:500}
 .nav__lang:hover{border-color:var(--gold);color:var(--gold-dark)}
 @media(max-width:768px){.nav__lang{display:none}}
+
+/* AJUSTES V2 */
+.nav__brand-img{height:42px;width:auto;object-fit:contain}
+
+/* 2. Botoes em sage */
+.btn--gold{background:var(--sage-dark);color:var(--paper);border-color:var(--sage-dark)}
+.btn--gold:hover{background:var(--sage);border-color:var(--sage)}
+.nav__cta{background:var(--sage-dark);border-color:var(--sage-dark)}
+.nav__cta:hover{background:var(--sage);border-color:var(--sage);color:var(--paper)}
+
+/* 7. Margens reduzidas em 50% (exceto hero) */
+.section{padding:60px 0}
+.section__head{margin:0 auto 48px}
+
+/* 5. Pilares: numeros 5x maior */
+.pillar__num{font-size:70px;font-family:var(--serif);font-weight:300;line-height:1;margin-bottom:18px;color:var(--sage-dark)}
+
+/* 6. Bullets problema: maiores */
+.problem__bullet{width:48px;height:48px;font-size:14px;border-width:2px}
+
+/* 9. Timeline: numeros 5x maior + alternar */
+.timeline__time{font-size:24px;font-family:var(--serif);font-style:italic;font-weight:400;color:var(--sage);text-transform:none;letter-spacing:.5px;margin-bottom:14px}
+.timeline__title{font-size:20px}
+.timeline__title{white-space:nowrap}
+
+/* 11. Imagens pinceis: cobrir todo o quadro sem buraco */
+.pennello__visual{padding:0;aspect-ratio:1}
+.pennello__visual img{width:100%;height:100%;object-fit:cover;object-position:center}
+
+/* 13. Selo garantia animado */
+@keyframes pulseSeal{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(184,147,90,.4)}50%{transform:scale(1.04);box-shadow:0 0 0 16px rgba(184,147,90,0)}}
+.garanzia__seal{animation:pulseSeal 2.4s infinite ease-in-out;background:var(--paper);position:relative}
+.garanzia__seal::before{content:"";position:absolute;inset:-12px;border:1px dashed var(--gold);border-radius:50%;animation:rotate 24s linear infinite}
+@keyframes rotate{to{transform:rotate(360deg)}}
+.garanzia__seal-num{font-size:48px;font-weight:400;color:var(--sage-dark)}
+.garanzia__seal-label{color:var(--gold-dark);font-size:10px;letter-spacing:3px;margin-top:6px}
+
+/* 12. Trans grid com imagem placeholder antes/depois */
+.trans{grid-template-columns:80px 1fr;position:relative;overflow:hidden}
+.trans__visual{display:none}
+.trans-images{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:18px;border-top:1px dashed var(--line);padding-top:18px}
+.trans-img{aspect-ratio:1;background:var(--sage-paper);border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;color:var(--mute);font-size:11px;letter-spacing:1px;text-transform:uppercase;border:1px dashed var(--line)}
+.trans-img--after{background:var(--sage-light)}
+
+/* 16. Offerta: visual layout com imagem */
+.offerta{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:center;max-width:1100px;margin:0 auto}
+.offerta__visual{aspect-ratio:4/5;background:var(--sage-paper);border-radius:8px;overflow:hidden}
+.offerta__visual img{width:100%;height:100%;object-fit:cover}
+.offerta-card{margin:0;max-width:none}
+
+/* Sage backgrounds em mais secoes */
+.section--paper-alt{background:var(--sage-paper)}
+
+/* Bullets problema: numero serif */
+.problem__bullet{font-family:var(--serif);font-style:italic}
+
+/* Hero subtitle: bold em algumas palavras */
+.hero__sub strong{color:var(--ink);font-weight:600}
+
+@media(max-width:900px){
+  .offerta{grid-template-columns:1fr}
+  .trans-images{grid-template-columns:1fr 1fr}
+  .timeline__title{white-space:normal}
+}
