@@ -303,3 +303,8 @@ a{color:inherit;text-decoration:none}
 /* Bullets problema: numero realmente grande */
 .problem__bullet{width:64px;height:64px;font-size:22px;border-width:2px;font-style:normal;font-weight:500}
 .problem__item{gap:24px}
+
+/* Pinceis: zoom in nas imagens panoramicas para mostrar pincel maior */
+.pennello__visual{overflow:hidden;background:var(--sage-paper)}
+.pennello__visual img{transform:scale(2.2);transform-origin:center 60%;transition:transform .5s ease}
+.pennello:hover .pennello__visual img{transform:scale(2.4)}
