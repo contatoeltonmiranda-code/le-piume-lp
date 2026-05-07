@@ -18,3 +18,28 @@ document.querySelectorAll('.faq__question').forEach(q=>{
     if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
   });
 });
+
+
+(function(){
+  var dots = document.querySelectorAll('.testi-dot');
+  var cards = document.querySelectorAll('.testi-grid .testi');
+  var prev = document.querySelector('.testi-arrow--prev');
+  var next = document.querySelector('.testi-arrow--next');
+  if(!cards.length || !dots.length) return;
+  var current = 0;
+  function isMobile(){ return window.matchMedia('(max-width:1024px)').matches; }
+  function show(i){
+    current = (i + cards.length) % cards.length;
+    if(isMobile()){
+      cards.forEach(function(c,idx){ c.style.display = idx===current ? '' : 'none'; });
+    } else {
+      cards.forEach(function(c){ c.style.display=''; });
+    }
+    dots.forEach(function(d,idx){ d.classList.toggle('testi-dot--active', idx===current); });
+  }
+  dots.forEach(function(d,idx){ d.addEventListener('click', function(){ show(idx); }); });
+  if(prev) prev.addEventListener('click', function(){ show(current-1); });
+  if(next) next.addEventListener('click', function(){ show(current+1); });
+  window.addEventListener('resize', function(){ show(current); });
+  show(0);
+})();
