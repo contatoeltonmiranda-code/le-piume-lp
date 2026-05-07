@@ -1136,7 +1136,7 @@ a{color:inherit;text-decoration:none}
 /* Hero textos com mais presenca */
 .hero__content{text-shadow:0 2px 18px rgba(0,0,0,.45)}
 .hero .hero__sub{color:rgba(248,246,240,1)}
-.hero .eyebrow{color:var(--paper);letter-spacing:3.5px;font-weight:600;background:linear-gradient(135deg,var(--sage) 0%,var(--sage-dark) 100%);padding:10px 22px;border-radius:999px;display:inline-flex;align-items:center;gap:14px;box-shadow:0 6px 20px -10px rgba(0,0,0,.4)}
+.hero .eyebrow{color:var(--paper)!important;-webkit-text-fill-color:var(--paper)!important;letter-spacing:3.5px;font-weight:600;background:linear-gradient(135deg,var(--sage) 0%,var(--sage-dark) 100%)!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;padding:10px 22px;border-radius:999px;display:inline-flex;align-items:center;gap:14px;box-shadow:0 6px 20px -10px rgba(0,0,0,.4)}
 .hero .eyebrow::before,.hero .eyebrow::after{display:none}
 .hero .h1{font-weight:500}
 .hero .hero__micro{color:rgba(248,246,240,.85)}
