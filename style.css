@@ -1074,9 +1074,9 @@ a{color:inherit;text-decoration:none}
 
 /* Task 6 — Bonus center: photo with radial mask blending into sage */
 .bonus-center{background:transparent !important;position:relative;border-radius:8px;overflow:hidden}
-.bonus-center img{width:100%;height:100%;object-fit:cover;filter:saturate(.88) contrast(.96);-webkit-mask-image:radial-gradient(circle at 50% 45%,#000 55%,transparent 88%);mask-image:radial-gradient(circle at 50% 45%,#000 55%,transparent 88%)}
-.bonus-center__halo{position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,transparent 50%,var(--sage-paper) 85%);pointer-events:none}
-.bonus-center::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:78%;aspect-ratio:1;border:1px solid var(--gold);border-radius:50%;opacity:.35;z-index:2;pointer-events:none}
+.bonus-center img{width:100%;height:100%;object-fit:cover}
+.bonus-center__halo{display:none}
+
 
 /* Task 7 — Per chi e/non e photos */
 .perchi__img{padding:0;border:0;background:transparent;overflow:hidden;position:relative;min-height:240px}
