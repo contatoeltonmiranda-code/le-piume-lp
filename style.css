@@ -1018,3 +1018,10 @@ a{color:inherit;text-decoration:none}
 .faq__question{padding:22px 0}
 .faq__answer-inner{padding:0 0 22px}
 @media(max-width:768px){.faq__item{padding:0 18px}}
+
+/* Garanzia inline dentro do bloco oferta */
+.offerta__guarantee{display:flex;align-items:center;gap:18px;margin-top:24px;padding-top:20px;border-top:1px solid var(--line);text-align:left}
+.offerta__guarantee .garanzia__seal--mini{width:80px;height:80px;flex-shrink:0;transform:scale(.55);transform-origin:center}
+.offerta__guarantee-text strong{display:block;font-family:var(--serif);font-size:15px;font-weight:500;color:var(--ink);margin-bottom:6px;font-style:normal}
+.offerta__guarantee-text p{font-size:12px;line-height:1.55;color:var(--ink-soft);margin:0}
+@media(max-width:520px){.offerta__guarantee{flex-direction:column;text-align:center}.offerta__guarantee .garanzia__seal--mini{transform:scale(.6)}}
