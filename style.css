@@ -577,8 +577,7 @@ a{color:inherit;text-decoration:none}
   .solution__pillars .pillar{padding-top:36px}
 }
 
-/* 3. DIFF CARDS: imagem de fundo escura + overlay + texto sobreposto */
-.diff-wrap{display:none}
+/* 3. DIFF CARDS: imagem de fundo escura + overlay + texto sobreposto (DESATIVADO V5) */
 .diff-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -654,3 +653,150 @@ a{color:inherit;text-decoration:none}
 .garanzia__seal::after{border-color:var(--sage)}
 .garanzia__seal-num{color:var(--sage-dark)}
 .garanzia__seal-label{color:var(--sage-dark)}
+
+/* ============================================
+   AJUSTES V5 - 2026-05-07
+   Problem 3-col + Diff circular
+   ============================================ */
+
+/* PROBLEM 3-col: titulo na esquerda, items em 2 cols na direita */
+.problem-layout{
+  display:grid;
+  grid-template-columns:1fr 1.5fr;
+  gap:64px;
+  align-items:center;
+  max-width:1200px;
+  margin:0 auto;
+}
+.problem-head{text-align:left}
+.problem-head .eyebrow{display:inline-block;margin-bottom:18px}
+.problem-head .h2{text-align:left;margin:0}
+.problem-layout .problem-grid{
+  grid-template-columns:1fr 1fr;
+  gap:14px 32px;
+  max-width:none;
+  margin:0;
+}
+@media(max-width:900px){
+  .problem-layout{grid-template-columns:1fr;gap:32px}
+  .problem-head{text-align:center}
+  .problem-head .eyebrow{margin-left:auto;margin-right:auto}
+  .problem-head .h2{text-align:center}
+  .problem-layout .problem-grid{grid-template-columns:1fr;gap:0}
+}
+
+/* DIFF circular: 2 em cima + 1 embaixo, com circulo decorativo de fundo */
+.diff-wrap{
+  display:block;
+  position:relative;
+  max-width:900px;
+  margin:0 auto;
+  min-height:560px;
+  padding:40px 0;
+}
+.diff-wrap::before{
+  content:"";
+  position:absolute;
+  width:480px;
+  height:480px;
+  border:2px solid var(--sage);
+  border-radius:50%;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  opacity:.35;
+  z-index:0;
+  pointer-events:none;
+}
+.diff-wrap .diff-connector{
+  position:absolute;
+  inset:40px 40px 40px 40px;
+  pointer-events:none;
+  z-index:1;
+}
+.diff-wrap .diff-connector svg{width:100%;height:100%;display:block;overflow:visible}
+.diff-wrap .diff-connector path{
+  stroke:var(--sage-dark);
+  stroke-width:1.5;
+  stroke-dasharray:4 6;
+  fill:none;
+  opacity:.5;
+}
+.diff-wrap .diff-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:60px 80px;
+  position:relative;
+  z-index:2;
+  max-width:none;
+}
+.diff--circle{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:48px 28px 28px;
+  text-align:center;
+  position:relative;
+  overflow:visible;
+  min-height:auto;
+  transition:border-color .35s,transform .35s,box-shadow .35s;
+  max-width:300px;
+}
+.diff--circle:hover{
+  border-color:var(--sage-dark);
+  transform:translateY(-4px);
+  box-shadow:0 18px 40px -24px rgba(0,0,0,.18);
+}
+.diff--circle .diff__num{
+  width:64px;height:64px;
+  border:2px solid var(--sage-dark);
+  border-radius:50%;
+  background:var(--paper);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:24px;
+  color:var(--sage-dark);
+  font-weight:400;
+  margin:-72px auto 18px;
+  position:relative;
+  z-index:3;
+  line-height:1;
+  letter-spacing:0;
+}
+.diff--circle .diff__title{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:500;
+  margin-bottom:12px;
+  color:var(--ink);
+  line-height:1.25;
+}
+.diff--circle .diff__text{
+  font-size:14px;
+  color:var(--ink-soft);
+  line-height:1.65;
+}
+/* Posicionamento 2-em-cima + 1-embaixo */
+.diff-wrap .diff:nth-child(1){justify-self:end;align-self:start;margin-right:20px}
+.diff-wrap .diff:nth-child(2){justify-self:start;align-self:start;margin-left:20px}
+.diff-wrap .diff:nth-child(3){grid-column:1 / 3;justify-self:center;align-self:end}
+
+@media(max-width:900px){
+  .diff-wrap{min-height:auto;padding:0}
+  .diff-wrap::before{display:none}
+  .diff-wrap .diff-connector{display:none}
+  .diff-wrap .diff-grid{grid-template-columns:1fr;gap:60px;max-width:340px;margin:0 auto}
+  .diff-wrap .diff:nth-child(1),
+  .diff-wrap .diff:nth-child(2),
+  .diff-wrap .diff:nth-child(3){
+    grid-column:auto;
+    justify-self:center;
+    align-self:auto;
+    margin:0 auto;
+    max-width:340px;
+  }
+}
