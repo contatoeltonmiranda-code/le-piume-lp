@@ -27,14 +27,9 @@ document.querySelectorAll('.faq__question').forEach(q=>{
   var next = document.querySelector('.testi-arrow--next');
   if(!cards.length || !dots.length) return;
   var current = 0;
-  function isMobile(){ return window.matchMedia('(max-width:1024px)').matches; }
   function show(i){
     current = (i + cards.length) % cards.length;
-    if(isMobile()){
-      cards.forEach(function(c,idx){ c.style.display = idx===current ? '' : 'none'; });
-    } else {
-      cards.forEach(function(c){ c.style.display=''; });
-    }
+    cards.forEach(function(c,idx){ c.style.display = idx===current ? '' : 'none'; });
     dots.forEach(function(d,idx){ d.classList.toggle('testi-dot--active', idx===current); });
   }
   dots.forEach(function(d,idx){ d.addEventListener('click', function(){ show(idx); }); });
