@@ -875,7 +875,6 @@ a{color:inherit;text-decoration:none}
 }
 
 /* 2. CARDS FADE-BOTTOM — gradient da cor do card para transparente */
-.diff--circle,
 .bonus-layout .bonus,
 .trans,
 .testi,
@@ -883,6 +882,7 @@ a{color:inherit;text-decoration:none}
 .perchi__body{
   background:linear-gradient(to bottom,var(--paper) 0%,var(--paper) 55%,rgba(248,246,240,0) 100%);
 }
+.diff--circle{background:var(--paper)}
 .pennello{
   background:linear-gradient(to bottom,var(--paper) 0%,var(--paper) 60%,rgba(248,246,240,0) 100%);
 }
