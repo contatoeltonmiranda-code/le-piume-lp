@@ -350,7 +350,7 @@ a{color:inherit;text-decoration:none}
 @media(max-width:768px){.pennello__visual{aspect-ratio:5/3;min-height:auto}}
 /* AJUSTES V3 - 2026-05-06 */
 
-.hero-divider{height:10px;width:50%;background:linear-gradient(90deg,var(--sage-paper) 0%,var(--sage) 35%,var(--sage-dark) 70%,var(--gold) 100%);margin:0;border:0}
+.hero-divider{height:40px;width:50%;background:linear-gradient(90deg,var(--sage-paper) 0%,var(--sage) 35%,var(--sage-dark) 70%,var(--gold) 100%);margin:0;border:0}
 
 .problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 56px;max-width:980px;margin:0 auto}
 .problem__item{display:flex;gap:16px;padding:14px 0;border-bottom:0;align-items:flex-start}
