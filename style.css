@@ -704,16 +704,31 @@ a{color:inherit;text-decoration:none}
 .diff-wrap::before{
   content:"";
   position:absolute;
-  width:480px;
-  height:480px;
-  border:2px solid var(--sage);
+  width:600px;
+  height:600px;
+  border:2px solid var(--sage-dark);
   border-radius:50%;
   left:50%;
   top:50%;
   transform:translate(-50%,-50%);
-  opacity:.35;
+  opacity:.5;
   z-index:0;
   pointer-events:none;
+}
+.diff-wrap::after{
+  content:"";
+  position:absolute;
+  width:760px;
+  height:760px;
+  border:1px dashed var(--sage);
+  border-radius:50%;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  opacity:.3;
+  z-index:0;
+  pointer-events:none;
+  animation:rotateRing 60s linear infinite;
 }
 .diff-wrap .diff-connector{
   position:absolute;
