@@ -448,7 +448,7 @@ a{color:inherit;text-decoration:none}
 .testi-google__stars{color:#fbbc04;letter-spacing:2px;font-size:22px;line-height:1}
 .testi-google__label{font-size:13px;color:var(--mute);letter-spacing:.5px}
 .testi-carousel{position:relative;padding:0 56px}
-.testi-grid{display:grid;grid-template-columns:1fr;gap:22px;padding:0}
+.testi-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding:0}
 .testi{padding:26px 24px;background:var(--paper);border:1px solid var(--line);border-radius:8px;box-shadow:0 6px 24px -16px rgba(0,0,0,.14);position:relative}
 .testi__google-row{display:flex;align-items:center;gap:12px;margin-bottom:12px}
 .testi__avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--paper);font-family:var(--sans);font-weight:500;font-size:16px;flex-shrink:0}

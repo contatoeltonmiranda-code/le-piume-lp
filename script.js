@@ -29,7 +29,8 @@ document.querySelectorAll('.faq__question').forEach(q=>{
   var current = 0;
   function show(i){
     current = (i + cards.length) % cards.length;
-    cards.forEach(function(c,idx){ c.style.display = idx===current ? '' : 'none'; });
+    var second = (current + 1) % cards.length;
+    cards.forEach(function(c,idx){ c.style.display = (idx===current || idx===second) ? '' : 'none'; });
     dots.forEach(function(d,idx){ d.classList.toggle('testi-dot--active', idx===current); });
   }
   dots.forEach(function(d,idx){ d.addEventListener('click', function(){ show(idx); }); });
