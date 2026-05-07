@@ -52,7 +52,7 @@ a{color:inherit;text-decoration:none}
 .section__head .lead{margin:24px auto 0}
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:140px var(--gut) 100px;max-width:none;margin:0;position:relative;text-align:center}
 .hero__title{margin:32px 0}
-.hero__sub{font-size:clamp(15px,1.3vw,17px);color:var(--ink-soft);line-height:1.7;max-width:720px;margin:0 auto 48px;text-align:center}
+.hero__sub{font-size:clamp(14px,1.15vw,16px);color:var(--ink-soft);line-height:1.85;max-width:none;margin:0 auto 48px;text-align:center}
 .hero__cta-row{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
 .hero__visual{position:relative;aspect-ratio:1;display:flex;align-items:center;justify-content:center}
 .hero__visual::before{content:"";position:absolute;inset:0;background:var(--sage-paper);border-radius:8px}
@@ -1180,3 +1180,11 @@ a{color:inherit;text-decoration:none}
 
 /* Oferta: bloco esquerdo com altura natural reduzida */
 #offerta .offerta__col--list{padding:32px 36px;align-self:start}
+
+
+/* Hero sub: 3 linhas garantidas via spans block */
+.hero__sub .line{display:block;white-space:nowrap}
+@media(max-width:900px){
+  .hero__sub{font-size:13px}
+  .hero__sub .line{white-space:normal}
+}
