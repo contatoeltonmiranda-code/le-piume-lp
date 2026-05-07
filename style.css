@@ -834,3 +834,182 @@ a{color:inherit;text-decoration:none}
   #offerta .offerta__col--list > *{max-width:none}
   #offerta .offerta__col--buy{border-radius:0 0 6px 6px;margin-left:0;margin-top:-1px}
 }
+
+
+/* ============================================
+   AJUSTES V6 - 2026-05-07
+   Effects pack: gradient text, fade cards, noise bg,
+   bonus center align, sage gradient bg, gold->sage
+   ============================================ */
+
+/* 1. GRADIENT TEXT em sage — utilitario + auto-aplicacao em headlines/eyebrow */
+.text-gradient-sage,
+.h2 em,
+.h1 em,
+.eyebrow,
+.eyebrow--center,
+.problem__close em,
+.cta-strip__title em,
+.section--sage-dark .h2 em{
+  background:linear-gradient(135deg,var(--sage) 0%,var(--sage-dark) 50%,var(--sage) 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+}
+/* Excecao: section ink/sage-dark precisam tom mais claro para legibilidade */
+.section--ink .h2 em,
+.section--sage-dark .h2 em{
+  background:linear-gradient(135deg,var(--sage-light) 0%,var(--sage) 55%,var(--sage-light) 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+/* Eyebrow no fundo escuro */
+.section--sage-dark .eyebrow,
+.section--ink .eyebrow{
+  background:linear-gradient(135deg,var(--sage-light) 0%,var(--sage) 50%,var(--sage-light) 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* 2. CARDS FADE-BOTTOM — gradient da cor do card para transparente */
+.diff--circle,
+.bonus-layout .bonus,
+.trans,
+.testi,
+.faq__item,
+.perchi__body{
+  background:linear-gradient(to bottom,var(--paper) 0%,var(--paper) 55%,rgba(248,246,240,0) 100%);
+}
+.pennello{
+  background:linear-gradient(to bottom,var(--paper) 0%,var(--paper) 60%,rgba(248,246,240,0) 100%);
+}
+/* Cards em fundos sage — usam sage-paper como cor de partida */
+.section--sage .bonus-layout .bonus,
+.section--sage .trans,
+.section--sage .testi,
+.section--sage .faq__item{
+  background:linear-gradient(to bottom,var(--paper) 0%,var(--paper) 50%,rgba(239,239,233,0) 100%);
+}
+/* Perchi no fundo sage-dark — fade para o tom do fundo */
+.section--sage-dark .perchi__body{
+  background:linear-gradient(to bottom,rgba(255,255,255,.08) 0%,rgba(255,255,255,.06) 55%,rgba(255,255,255,0) 100%);
+}
+.section--sage-dark .perchi__col--no .perchi__body{
+  background:linear-gradient(to bottom,rgba(0,0,0,.22) 0%,rgba(0,0,0,.16) 55%,rgba(0,0,0,0) 100%);
+}
+
+/* 3. CHUVISCO/NOISE em secoes selecionadas (la risposta=storia, bonus, timeline) */
+.section--sage,
+.section--sage-soft{position:relative;overflow:hidden}
+.section--sage::before,
+.section--sage-soft::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    radial-gradient(circle at 18% 22%,rgba(111,122,96,.18) 0,transparent 1.5px),
+    radial-gradient(circle at 72% 38%,rgba(111,122,96,.14) 0,transparent 1.5px),
+    radial-gradient(circle at 38% 78%,rgba(111,122,96,.16) 0,transparent 1.5px),
+    radial-gradient(circle at 88% 86%,rgba(111,122,96,.12) 0,transparent 1.5px);
+  background-size:64px 64px,84px 84px,56px 56px,72px 72px;
+  opacity:.7;
+  pointer-events:none;
+  z-index:0;
+}
+.section--sage > .container,
+.section--sage-soft > .container{position:relative;z-index:1}
+
+.section--ink{position:relative;overflow:hidden}
+.section--ink::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    radial-gradient(circle at 22% 30%,rgba(197,204,182,.06) 0,transparent 1.5px),
+    radial-gradient(circle at 78% 65%,rgba(197,204,182,.05) 0,transparent 1.5px);
+  background-size:74px 74px,92px 92px;
+  opacity:.8;
+  pointer-events:none;
+  z-index:0;
+}
+.section--ink > .container{position:relative;z-index:1}
+
+/* 4. BONUS CARDS — texto centralizado vertical (img 35) */
+.bonus-layout .bonus{
+  align-items:center;
+  align-content:center;
+  min-height:160px;
+}
+.bonus-layout .bonus > div:not(.bonus__num){
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+/* 5. SECOES SAGE com gradient sutil */
+.section--sage{
+  background:radial-gradient(ellipse at top,var(--sage-paper) 0%,var(--sage-paper) 55%,#E5E6DC 100%);
+}
+.section--sage-soft{
+  background:linear-gradient(180deg,var(--sage-paper) 0%,#E8E9DE 100%);
+}
+.section--sage-dark{
+  background:linear-gradient(160deg,var(--sage-dark) 0%,#5C6650 60%,#525C46 100%);
+}
+
+/* 6. GOLD -> SAGE em todos os elementos restantes (mantem so brand mark) */
+.nav__links a::after{background:var(--sage)}
+.nav__cta:hover{background:var(--sage);border-color:var(--sage)}
+.eyebrow::before{background:var(--sage)}
+.eyebrow--center::after{background:var(--sage)}
+.hero__micro::before{background:var(--sage)}
+.btn--ink:hover{background:var(--sage-dark);border-color:var(--sage-dark)}
+.btn--gold{background:var(--sage-dark);color:var(--paper);border-color:var(--sage-dark)}
+.btn--gold:hover{background:var(--sage);border-color:var(--sage)}
+.link:hover{color:var(--sage-dark);border-color:var(--sage-dark)}
+.problem__bullet{border-color:var(--sage-dark)}
+.solution__quote{border-left-color:var(--sage)}
+.pillar__num{color:var(--sage-dark)}
+.pennello:hover{border-color:var(--sage-dark)}
+.pennello__num{color:var(--sage-dark)}
+.pennello__type{color:var(--sage-dark)}
+.pennello__when strong{color:var(--sage-dark)}
+.trans:hover{border-color:var(--sage-dark)}
+.trans__num{color:var(--sage-dark)}
+.timeline::before{background:var(--sage)}
+.timeline__dot{background:var(--sage)}
+.timeline__time{color:var(--sage)}
+.diff:hover{border-color:var(--sage-dark)}
+.diff__icon{border-color:var(--sage-dark);color:var(--sage-dark)}
+.bonus__num{color:var(--sage-dark)}
+.perchi__list li::before{background:var(--sage)}
+.testi__quote-mark{color:var(--sage)}
+.offerta-card{border-color:var(--sage-dark)}
+.offerta-card::before,.offerta-card::after{border-color:var(--sage-dark)}
+.offerta-card__items li::before{background:var(--sage)}
+.prezzo-now{color:var(--sage-dark)}
+.faq__icon{border-color:var(--sage-dark);color:var(--sage-dark)}
+.faq__question:hover{color:var(--sage-dark)}
+.footer__col h5{color:var(--sage-light)}
+.footer__col a:hover{color:var(--sage-light)}
+.nav__lang:hover{border-color:var(--sage-dark);color:var(--sage-dark)}
+.timeline__item .timeline__dot{background:var(--sage)}
+
+/* Hero divider — substitui gold por sage-dark */
+.hero-divider{background:linear-gradient(90deg,var(--sage-paper) 0%,var(--sage) 35%,var(--sage-dark) 70%,var(--sage-dark) 100%)}
+.hero-divider--right{background:linear-gradient(90deg,var(--sage-dark) 0%,var(--sage-dark) 30%,var(--sage) 65%,var(--sage-paper) 100%)}
+
+/* Garanzia — antes mistura, agora full sage */
+.garanzia{border-color:var(--sage-dark)}
+.garanzia::before{border-color:var(--sage-dark)}
+.garanzia__seal::before{border-color:var(--sage-dark)}
+.garanzia__seal::after{border-color:var(--sage)}
+.garanzia__seal-num{color:var(--sage-dark)}
+.garanzia__seal-label{color:var(--sage-dark)}
+
+/* Mantem brand mark dourado (unico acento gold) */
+.nav__brand-mark{border-color:var(--gold-dark);color:var(--gold-dark)}
+
