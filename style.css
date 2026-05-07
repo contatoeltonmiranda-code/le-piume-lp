@@ -438,12 +438,17 @@ a{color:inherit;text-decoration:none}
   .cta-strip__box .btn{justify-self:center}
 }
 
-.testi-google{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:36px;flex-wrap:wrap}
+.testi-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:center}
+.testi-side{text-align:left}
+.testi-side .h2{text-align:left;margin-bottom:32px}
+.testi-side .eyebrow{display:inline-block;margin-bottom:16px}
+.testi-main{min-width:0}
+.testi-google{display:flex;align-items:center;justify-content:flex-start;gap:14px;margin-bottom:0;flex-wrap:wrap}
 .testi-google__logo{width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center}
 .testi-google__stars{color:#fbbc04;letter-spacing:2px;font-size:22px;line-height:1}
 .testi-google__label{font-size:13px;color:var(--mute);letter-spacing:.5px}
-.testi-carousel{position:relative;padding:0 60px}
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:0}
+.testi-carousel{position:relative;padding:0 56px}
+.testi-grid{display:grid;grid-template-columns:1fr;gap:22px;padding:0}
 .testi{padding:26px 24px;background:var(--paper);border:1px solid var(--line);border-radius:8px;box-shadow:0 6px 24px -16px rgba(0,0,0,.14);position:relative}
 .testi__google-row{display:flex;align-items:center;gap:12px;margin-bottom:12px}
 .testi__avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--paper);font-family:var(--sans);font-weight:500;font-size:16px;flex-shrink:0}
@@ -464,7 +469,9 @@ a{color:inherit;text-decoration:none}
 .testi-dots{display:flex;justify-content:center;gap:10px;margin-top:28px}
 .testi-dot{width:8px;height:8px;border-radius:50%;background:var(--line);transition:all .3s;cursor:pointer;border:0;padding:0}
 .testi-dot--active{background:var(--sage-dark);width:24px;border-radius:4px}
-@media(max-width:1024px){.testi-grid{grid-template-columns:1fr}.testi-carousel{padding:0}.testi-arrow{display:none}}
+@media(max-width:900px){.testi-carousel{padding:0 44px}}
+@media(max-width:560px){.testi-carousel{padding:0}.testi-arrow{display:none}}
+@media(max-width:900px){.testi-layout{grid-template-columns:1fr;gap:32px}.testi-side{text-align:center}.testi-side .h2{text-align:center}.testi-side .testi-google{justify-content:center}}
 
 .section--ink .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;max-width:1180px;margin:0 auto;position:static;padding-top:0}
 .section--ink .timeline::before{display:none}
@@ -799,4 +806,26 @@ a{color:inherit;text-decoration:none}
     margin:0 auto;
     max-width:340px;
   }
+}
+
+/* OFFERTA REDESIGN — 2 colunas, sem imagem, gradient sage */
+#offerta .offerta{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:stretch;max-width:1100px;margin:0 auto}
+#offerta .offerta__col{position:relative;background:var(--paper);padding:48px 40px;border:1px solid transparent;background-image:linear-gradient(var(--paper),var(--paper)),linear-gradient(135deg,var(--sage) 0%,var(--sage-light) 50%,var(--sage-dark) 100%);background-origin:border-box;background-clip:padding-box,border-box;border-radius:6px;display:flex;flex-direction:column}
+#offerta .offerta__col--buy{text-align:center;justify-content:center}
+#offerta .offerta__eyebrow{font-size:10px;letter-spacing:3.5px;text-transform:uppercase;color:var(--sage-dark);font-weight:500;margin-bottom:24px;display:inline-flex;align-items:center;gap:14px}
+#offerta .offerta__eyebrow::before{content:"";width:32px;height:1px;background:var(--sage-dark)}
+#offerta .offerta-card__items{margin:0;max-width:none;text-align:left;gap:16px}
+#offerta .offerta-card__items li{font-size:15px;padding-left:32px}
+#offerta .offerta-card__items li::before{background:var(--sage-dark)}
+#offerta .eyebrow--center{color:var(--sage-dark)}
+#offerta .eyebrow--center::after{background:var(--sage-dark)}
+#offerta .prezzo-block{padding:32px 0;margin:24px 0}
+#offerta .prezzo-now{color:var(--sage-dark)}
+#offerta .prezzo-old{color:var(--mute)}
+#offerta .offerta__micro{margin-top:20px;color:var(--sage-dark);letter-spacing:.5px}
+#offerta .btn--gold{background:var(--sage-dark);border-color:var(--sage-dark);color:var(--paper)}
+#offerta .btn--gold:hover{background:var(--sage);border-color:var(--sage)}
+@media(max-width:900px){
+  #offerta .offerta{grid-template-columns:1fr;gap:20px}
+  #offerta .offerta__col{padding:36px 28px}
 }
